@@ -6,7 +6,7 @@
 <Text>: div인데 텍스트부분들때? 제목같은거할때
 
 ## CSS 먹이기
-```javscript
+```javascript
 const styles = StyleSheet.create({
   container: {
     어쩌고저쩌고.
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 ### platform specific 한 css는?
 > shadow는 ios, android 먹이는 방법이 다르다. 필요하면 코드 참고
 
-```javscript
+```javascript
 Platform.select({
     ios: {
 
@@ -44,7 +44,7 @@ Platform.select({
 4. search
 5. send
 
-### <View> vs <ScrollView>
+### View vs ScrollView
 - View (Fixed)
 - ScrollView 말그대로 스크롤해서 내릴 수 있는 것. 
 
@@ -53,4 +53,53 @@ ScrollView 안에 있는 것들에 style을 먹이고 싶을 때는,
 
 ### <TouchableOpacity>
 
-check box 나 똥그라미 같은거 구현할때
+check box 나 똥그라미 같은거 구현할때,
+props: onPress = {} 로 state 설정 가능!
+
+### How to Pass multiple styles in one component depending on the state?
+이렇게 array 형태로! 여러개를 넣어두고 상황에 따라 다르게 할 수 있음. 
+```javascript
+    <View
+        style={[
+        styles.circle,
+        isCompleted ? styles.completedCircle : styles.uncompletedCircle
+        ]}
+    />
+    //styles
+    circle: {
+        width: 30,
+        height: 30,
+        borderRadius: 15,
+        borderWidth: 3,
+        marginRight: 20
+    },
+    completedCircle: {
+        borderColor: "#bbb"
+    },
+    uncompletedCircle: {
+        borderColor: "#F23657"
+    },
+```
+### Flex Container 복습
+```
+container: {
+    flexDirection: "row", //content 들을 옆으로
+    alignItems: "center", // container의 중간에
+    justifyContent: "space-between" //거리는 좀 띄고
+},
+```
+
+### 버튼 주위를 눌러도 터치 인지되게 하기 위해서 
+그 버튼의 container (한 버튼의) 에다가 
+```
+  actionContainer: {
+    marginVertical: 10,
+    marginHorizontal: 10
+  },
+```
+이렇게 먹여서 주위를 터치해도 먹어지게끔 설정하기.->두꺼운 손가락을 위한 배려
+
+### onBlur (TextInput의 Props)
+
+다른 곳을 눌렀을 때, 이 event를 onBlur로 감지해서 이벤트핸들링 할 수 있음. 예를 들어
+저장이 된다거나, 나간다거나 등등.
