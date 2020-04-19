@@ -24,10 +24,10 @@ const styles = StyleSheet.create({
 ```javascript
 Platform.select({
     ios: {
-
+        blahblah
     },
     android: {
-
+        blahblah
     }
 })
 ```
