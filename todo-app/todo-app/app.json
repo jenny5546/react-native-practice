@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "todo-app",
-    "slug": "todo-app for react native practice",
+    "slug": "todo-app-practice",
     "platforms": [
       "ios",
       "android",
