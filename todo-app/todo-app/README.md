@@ -143,3 +143,5 @@ event.stopPropogation()으로 흔들림 방지!!! 다른거할때는
 안 흔들리게끔하기.
 ### app.json splash
 새로고침했을 때, 예쁘게 처음에 뜨는 화면. 
+
+### Build 부분은 다하고 Publishing the App 다시 듣기
