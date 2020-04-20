@@ -103,3 +103,43 @@ container: {
 
 다른 곳을 눌렀을 때, 이 event를 onBlur로 감지해서 이벤트핸들링 할 수 있음. 예를 들어
 저장이 된다거나, 나간다거나 등등.
+
+### AppLoading from Expo 
+
+### onSubmitEditing 
+뭔가글을쓴게 끝났을 때의 props , state로 막 뭔가 액션을 줄 수 있따. 
+
+### Object로 해라. 
+toDos: prevState.toDos + newToDo 
+```javascript
+const newToDoObject = {
+  [ID]: {
+    id: ID,
+    isCompleted: false,
+    text: newToDo,
+    createdAt: Date.now()
+  }
+};
+```
+
+### Object 으로 새로운거 표시하는 법
+```javascript
+{Object.values(toDos)
+  .reverse()
+  .map(toDo => (
+    <ToDo
+      key={toDo.id}
+      deleteToDo={this._deleteToDo}
+      uncompleteToDo={this._uncompleteToDo}
+      completeToDo={this._completeToDo}
+      updateToDo={this._updateToDo}
+      {...toDo}
+    />
+  ))}
+```
+
+### Propogation
+event.stopPropogation()으로 흔들림 방지!!! 다른거할때는 
+안 흔들리게끔하기.
+### app.json splash
+새로고침했을 때, 예쁘게 처음에 뜨는 화면. 
